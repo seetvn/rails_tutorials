@@ -1,3 +1,19 @@
 <h1><%= @article.title %></h1>
 
 <p><%= @article.body %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_article_path(@article) %></li>
+</ul>
+
+<ul>
+  <li><%= link_to "Home",root_path %></li>
+</ul>
+
+<ul>
+  <li>
+    <%= form_for @article, method: :delete, data: { turbo_frame: "articles" } do |form| %>
+      <%= form.submit "Destroy", data: { confirm: "Are you sure?" } %>
+    <% end %>
+  </li>
+</ul>
