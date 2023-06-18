@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "articles#index"
+  
 
   get "/articles", to: "articles#index"
   # The priority is based upon order of creation: first created -> highest priority.
