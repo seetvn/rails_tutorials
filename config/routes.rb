@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root "articles#index"
 
-  resources :articles
+  resources :articles do # :<name> references the model via naming convetion
+    resources :comments
+  end
   
 
 
